@@ -31,8 +31,8 @@ class CreateDataTSView(generics.CreateAPIView):
 def index(request):
     labels = []
     data = []
-
-    queryset = DataTS.objects.order_by('timestamp')[:10]
+    u= DataTS.objects.order_by('timestamp').reverse()[:10]
+    queryset = [u[9],u[8],u[7],u[6],u[5],u[4],u[3],u[2],u[1],u[0]]
     for i in queryset:
         labels.append(str(datetime.fromisoformat(str(i.timestamp))).split('.')[0])
         data.append(i.value)
