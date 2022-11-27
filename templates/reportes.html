@@ -1,0 +1,28 @@
+<style>
+    .reporte { border-collapse: collapse; width:300px; }
+    .reporte th, .reporte td { padding: 5px; border: solid 1px #777; }
+    .reporte th { background-color: lightblue; }
+</style>
+<table class="reporte">
+    <caption>Reportes de Temperatura</caption>
+        <thead>
+            <tr>
+                <th>Casino</th>
+                <th>Refrigerador</th>
+                <th>Temperatura</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for data in datats %}
+            <tr>
+    
+                <td>{{ data.location }}</td>
+                <td>{{ data.device }}</td>
+                <td>{{ data.value }}°C</td>
+                <td>{{ data.timestamp }}</td>
+    
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

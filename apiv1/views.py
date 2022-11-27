@@ -40,3 +40,9 @@ def index(request):
         {'labels': labels,
         'data': data}
     )
+def reportes(request):
+    datats = []
+    queryset = DataTS.objects.order_by('timestamp')
+    for item in queryset:
+        datats.append(dict(tag=item.tag,device=item.device.name, value=item.value, timestamp=item.timestamp, location=item.device.location))
+    return render(request, 'reportes.html', {'datats':datats})

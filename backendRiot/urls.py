@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from refrigerador_iot_bot import urls as refrigerador_iot_bot_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apiv1.urls')),
+    path('refrigerador_iot_bot/', include(refrigerador_iot_bot_urls)),
 ]

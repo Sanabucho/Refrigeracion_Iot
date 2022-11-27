@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apiv1',
-    'rest_framework'
+    'rest_framework',
+    'django_tgbot',
+    'refrigerador_iot_bot'
 ]
 
 MIDDLEWARE = [
