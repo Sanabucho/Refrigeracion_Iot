@@ -10,7 +10,8 @@ docker-compose up
 ## Crear Backup
 ```
 docker exec refrigeracion_iot_riot-db_1 pg_dumpall -U postgres > /path/to/db/backup.sql
-'''
+```
+
 ## Recuperar DB
 ```
 docker exec refrigeracion_iot_riot-db_1 createdb -U postgres postgres
